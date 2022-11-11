@@ -1,6 +1,13 @@
 # rpi-zero-roboterarm
 Software zur Steuerung eines KOSMOS Roboterarm mit einem RP2040-Zero
 
+## Konfiguration
+
+- im ```motoren.txt``` file die entsprechenden Motoren des Arms konfigurieren
+- scripts aufzeichnen und in eine Datein innerhalb scripts/ Ordner auf dem Raspberry kopieren
+- in ```main.py``` das entsprechende script in der gewünschten Reihenfolge ausführen
+- freude haben :-)
+
 ## Ausgabe
 
 ```
@@ -22,4 +29,4 @@ Software zur Steuerung eines KOSMOS Roboterarm mit einem RP2040-Zero
 1598049 [TRACE] 536897996 Motor                - Motor[M2] drehen. richtung=-1, dauer=1000ms
 1599053 [TRACE] 536897996 Motor                - Motor[M4] drehen. richtung=-1, dauer=2000ms
 1601057 [TRACE] 536897996 Motor                - Motor[M5] drehen. richtung=-1, dauer=1000ms
-```
+```
