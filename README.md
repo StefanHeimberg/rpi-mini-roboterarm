@@ -1,4 +1,4 @@
-# rpi-mini-roboterarm
+# rpi-zero-roboterarm
 Software zur Steuerung eines KOSMOS Roboterarm mit einem RP2040-Zero
 
 ## Ausgabe
