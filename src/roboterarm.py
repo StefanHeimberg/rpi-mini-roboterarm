@@ -7,6 +7,7 @@
 
 from logger import Logger
 from machine import Pin
+import time
 
 class Motor():
     
@@ -58,11 +59,28 @@ class Motor():
         if dauer is None:
             raise ValueError("dauer not set")
 
-        self.__log.trace("Motor[{}] drehen. richtung={}, dauer={}".format(
+        self.__log.trace("Motor[{}] drehen. richtung={}, dauer={}ms".format(
             self.id,
             richtung,
             dauer
         ))
+        
+        if richtung == -1:
+            self.forwaertsPin.off()
+            self.rueckwaertsPin.on()
+            time.sleep_ms(dauer)
+            self.rueckwaertsPin.off()
+        elif richtung == 0:
+            self.forwaertsPin.off()
+            self.rueckwaertsPin.off()
+            time.sleep_ms(dauer)
+        elif richtung == 1:
+            self.rueckwaertsPin.off()
+            self.forwaertsPin.on()
+            time.sleep_ms(dauer)
+            self.forwaertsPin.off()
+        else:
+            raise ValueError("richtung not valid. valid values: -1,0,1")
 
 motoren: Dict = {};
 
